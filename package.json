@@ -1,0 +1,44 @@
+{
+  "name": "load-panto-transformers",
+  "version": "0.1.0",
+  "description": "Automatically load panto transformers",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint index.js && ./node_modules/.bin/mocha",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "pre-commit": "test",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pantojs/load-panto-transformers.git"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "keywords": [
+    "panto",
+    "load",
+    "transformer"
+  ],
+  "author": "yanni4night@gmail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pantojs/load-panto-transformers/issues"
+  },
+  "homepage": "https://github.com/pantojs/load-panto-transformers#readme",
+  "dependencies": {
+    "arrify": "^1.0.1",
+    "lodash": "^4.14.1",
+    "multimatch": "^2.1.0",
+    "pkg-up": "^1.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.12",
+    "mocha": "^2.5.3",
+    "mocha-lcov-reporter": "^1.2.0",
+    "panto": "0.0.30",
+    "panto-transformer-css-sprites": "0.0.4",
+    "panto-transformer-filter": "^0.1.4",
+    "pre-commit": "^1.1.3"
+  }
+}
