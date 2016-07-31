@@ -3,9 +3,46 @@
 
 Automatically load panto transformers, inspired by [load-grunt-tasks](https://www.npmjs.com/package/load-grunt-tasks).
 
+#### Before
+
+```js
+panto.loadTransformer('read');
+panto.loadTransformer('write');
+panto.loadTransformer('uglify');
+panto.loadTransformer('less');
+panto.loadTransformer('integrity');
+panto.loadTransformer('browserify');
+panto.loadTransformer('copy');
+panto.loadTransformer('filter');
+panto.loadTransformer('babel');
+panto.loadTransformer('aspect');
+panto.loadTransformer('replace');
+panto.loadTransformer('stamp');
+panto.loadTransformer('resource');
+```
+
+#### After
+
 ```js
 require('load-panto-transformers')(panto);
-``
+```
+
+## Install
+
+```
+$ npm install --save-dev load-panto-transformers
+```
+
+
+## Usage
+
+```js
+// pantofile.js
+module.exports = panto => {
+    require('load-panto-transformers')(panto);
+    panto.$('*.js').read().uglify().write();
+};
+```
 
 [npm-url]: https://npmjs.org/package/load-panto-transformers
 [downloads-image]: http://img.shields.io/npm/dm/load-panto-transformers.svg
